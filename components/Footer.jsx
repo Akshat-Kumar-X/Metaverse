@@ -10,16 +10,19 @@ const Footer = () => (
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
-    className={`xPaddings py-8 relative`}
+    className="xPaddings py-8 relative"
   >
     <div className="footer-gradient" />
-    <div className={`innerWidth mx-auto flex flex-col gap-8`}>
+    <div className="innerWidth mx-auto flex flex-col gap-8">
       <div className="flex items-center justify-between flex-wrap gap-5">
         <h4 className="font-bold md:text-[64px] text-[44px] text-white">
           Enter the Metaverse
         </h4>
-        <Link href='https://about.meta.com/metaverse/' target='_blank'>
-          <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px] hover:bg-[#1c4a6b] duration-300">
+        <Link href="https://about.meta.com/metaverse/" target="_blank">
+          <button
+            type="button"
+            className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px] hover:bg-[#1c4a6b] duration-300"
+          >
             <img
               src="/headset.svg"
               alt="headset"
@@ -35,22 +38,19 @@ const Footer = () => (
         <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">
-            METAVERUS
-          </h4>
+          <h4 className="font-extrabold text-[24px] text-white">METAVERUS</h4>
           <p className="font-normal text-[14px] text-white opacity-50">
             Copyright © 2023 - 2024 Metaversus. All rights reserved.
           </p>
 
           <div className="flex gap-4">
             {socials.map((social) => (
-              <Link href={social.url} target='_blank'>
+              <Link href={social.url} target="_blank" key={social.name}>
                 <img
-                key={social.name}
-                src={social.imgUrl}
-                alt={social.name}
-                className="w-[24px] h-[24px] object-contain cursor-pointer"
-              />
+                  src={social.imgUrl}
+                  alt={social.name}
+                  className="w-[24px] h-[24px] object-contain cursor-pointer"
+                />
               </Link>
             ))}
           </div>
